@@ -89,5 +89,29 @@ Feature: Create End To End Account Test
     When method post
     Then status 201
     And print response
+    When method post
+    Then status 201
+    And print response
+    And assert response.LicensePlate == randomLicensePlate
+    * def generatedAccountid = response.id
+    Given url "https://tek-insurance-api.azurewebsites.net"
+    Given path "/api/accounts/add-account-address"
+    And param primaryPersonId = generatedAccountid
+    And header Authorization = "Bearer " + generatedToken
+    And request
+      """
+      {
+      "addressType": "Home",
+      "addressLine1": "2289 polm ave",
+      "city": "sacramento",
+      "state": "CA",
+      "postalCode": "95843",
+      "countryCode": "916",
+      "current": true
+      }
+      """
+    When method post
+    Then status 201
+    And print response
     
    
