@@ -36,7 +36,7 @@ Feature: Create End To End Account Test
     Given path "/api/accounts/add-account-phone"
     And param primaryPersonId = generatedAccountid
     And header Authorization = "Bearer " + generatedToken
-    * def randomPhonNumber = GeneratedData.getPhoneNumber()
+    * def randomPhonNumber = dataGenerator.getPhoneNumber()
     And request
       """
       {
@@ -55,20 +55,20 @@ Feature: Create End To End Account Test
     Given path "/api/accounts/add-account-car"
     And param primaryPersonId = generatedAccountid
     And header Authorization = "Bearer " + generatedToken
-    * def randomLicensePlate = GeneratedData.GetLicensePlate()
+    * def licensePlateNum = dataGenerator.GetLicensePlate()
     And request
       """
       {
       "make": "Toyota",
       "model": "Camry",
       "year": "2022",
-      "licensePlate": "CAt-33433"
+      "licensePlate": "#(licensePlateNum)"
       }
       """
     When method post
     Then status 201
     And print response
-    And assert response.LicensePlate == randomLicensePlate
+    And assert response.licensePlate == licensePlateNum
     * def generatedAccountid = response.id
     Given url "https://tek-insurance-api.azurewebsites.net"
     Given path "/api/accounts/add-account-address"
@@ -78,7 +78,7 @@ Feature: Create End To End Account Test
       """
       {
       "addressType": "Home",
-      "addressLine1": "2289 polm ave",
+      "addressLine1": "9888 pulm ave",
       "city": "sacramento",
       "state": "CA",
       "postalCode": "95843",
@@ -89,5 +89,6 @@ Feature: Create End To End Account Test
     When method post
     Then status 201
     And print response
+    And assert response.addressLine1 == "9888 pulm ave"
     
    
