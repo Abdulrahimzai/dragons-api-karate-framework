@@ -7,15 +7,16 @@ Feature: Create Account Test
   And print result
   * def generatedToken = result.response.token
   Given url "https://tek-insurance-api.azurewebsites.net"
+  @Regression
  Scenario: Create Account
   Given path "/api/accounts/add-primary-account"
   And header Authorization = "Bearer " + generatedToken
   And request 
   """
   {
-  "email": "Dcucumber5@gmail.com",
-  "firstName": "Karati",
-  "lastName": "Karatione",
+  "email": "Mmohammad55@gmail.com",
+  "firstName": "MohhamdN",
+  "lastName": "N",
   "title": "Mr",
   "gender": "MALE",
   "maritalStatus": "MARRIED",
@@ -26,7 +27,7 @@ Feature: Create Account Test
   When method post
   Then status 201
   And print response
-  And assert response.email == "DCucumber5@gmail.com"
+  And assert response.email == "Mmohammad55@gmail.com"
   Scenario: Delete Account
   Given path "/api/accounts/delete-account"
   And header Authorization = "Bearer " + generatedToken
