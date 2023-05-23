@@ -1,7 +1,7 @@
 Feature: Create Account Test
 
  Background: API Test Setup
- # callonce read is Karate Step to execute and read another frature file.
+ # callonce read is Karate Step to execute and read another feature file.
  #the result of callonce can store into new variable using def step.
   * def result = callonce read('GenerateToken.feature')
   And print result

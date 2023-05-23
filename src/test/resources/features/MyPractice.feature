@@ -12,14 +12,14 @@ Feature: Add Account Test
     And request
       """
       {
-       "email": "sacvdcedGmss@Gmail.com",
-       "firstName": "Xame",
+       "email": "sacpvdcedGmss@Gmail.com",
+       "firstName": "Xames",
        "lastName": "mike",
        "title": "MR.",
        "gender": "MALE",
        "maritalStatus": "MARRIED",
        "employmentStatus": "string",
-       "dateOfBirth": "1996-05-11"
+       "dateOfBirth": "1996-09-11"
       }
       """
     When method post
