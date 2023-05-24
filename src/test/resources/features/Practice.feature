@@ -1,3 +1,4 @@
+@smoke
 Feature: Add Account Test
 
   Background: Test Setup API
@@ -12,7 +13,7 @@ Feature: Add Account Test
     And request
       """
       {
-       "email": "sacpvdcedGmss@Gmail.com",
+       "email": "AkramJamal@Gmail.com",
        "firstName": "Xames",
        "lastName": "mike",
        "title": "MR.",

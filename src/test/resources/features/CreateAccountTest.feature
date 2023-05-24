@@ -14,7 +14,7 @@ Feature: Create Account Test
   And request 
   """
   {
-  "email": "MohamadZia05@gmail.com",
+  "email": "MohamadEkram@gmail.com",
   "firstName": "MohhamdN",
   "lastName": "N",
   "title": "Mr",
@@ -27,11 +27,11 @@ Feature: Create Account Test
   When method post
   Then status 201
   And print response
-  And assert response.email == "MohamadZia05@gmail.com"
+  And assert response.email == "MohamadEkram@gmail.com"
   Scenario: Delete Account
   Given path "/api/accounts/delete-account"
   And header Authorization = "Bearer " + generatedToken
-  And param primaryPersonId = 4586
+  And param primaryPersonId = 7151
   When method delete
   Then status 200
   And print response
