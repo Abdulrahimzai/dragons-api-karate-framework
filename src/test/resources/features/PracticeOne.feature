@@ -1,5 +1,5 @@
-
-Feature: Create End To End Account Test
+@Regression
+Feature: Create End Account Test
 
   Background: API Test Setup
     * def result = callonce read('GenerateToken.feature')
@@ -78,7 +78,7 @@ Feature: Create End To End Account Test
       """
       {
       "addressType": "Home",
-      "addressLine1": "4444 pulm ave",
+      "addressLine1": "5555 pulm ave",
       "city": "sacramento",
       "state": "CA",
       "postalCode": "95843",
@@ -89,6 +89,4 @@ Feature: Create End To End Account Test
     When method post
     Then status 201
     And print response
-    And assert response.addressLine1 == "4444 pulm ave"
-    
-   
+    And assert response.addressLine1 == "5555 pulm ave"
