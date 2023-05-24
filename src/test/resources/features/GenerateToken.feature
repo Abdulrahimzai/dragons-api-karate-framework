@@ -1,3 +1,4 @@
+ @Regression
  Feature: Generate Token 
  Scenario: Generate a vlid token 
  Given url "https://tek-insurance-api.azurewebsites.net" 

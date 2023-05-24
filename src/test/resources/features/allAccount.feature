@@ -1,4 +1,4 @@
-@allAcount
+@Regression
 Feature: all accounts
 
   Background: All Account

@@ -1,3 +1,4 @@
+@smoke
 Feature: Create Account Test
 
  Background: API Test Setup
@@ -7,14 +8,13 @@ Feature: Create Account Test
   And print result
   * def generatedToken = result.response.token
   Given url "https://tek-insurance-api.azurewebsites.net"
-  @Regression
  Scenario: Create Account
   Given path "/api/accounts/add-primary-account"
   And header Authorization = "Bearer " + generatedToken
   And request 
   """
   {
-  "email": "MmohammadAnc05@gmail.com",
+  "email": "MohamadAta05@gmail.com",
   "firstName": "MohhamdN",
   "lastName": "N",
   "title": "Mr",
@@ -27,7 +27,7 @@ Feature: Create Account Test
   When method post
   Then status 201
   And print response
-  And assert response.email == "MmohammadAnc05@gmail.com"
+  And assert response.email == "MohamadAta05@gmail.com"
   Scenario: Delete Account
   Given path "/api/accounts/delete-account"
   And header Authorization = "Bearer " + generatedToken
