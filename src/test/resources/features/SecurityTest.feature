@@ -1,4 +1,4 @@
-@Test
+@smoke
 Feature: API TEst Security Section
  
  Background: Setup Request URL

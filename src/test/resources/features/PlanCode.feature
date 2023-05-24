@@ -1,4 +1,4 @@
-@Regressin
+@Regression
 Feature: Plan code Feature
 
   Background: Setup api tests and get token
